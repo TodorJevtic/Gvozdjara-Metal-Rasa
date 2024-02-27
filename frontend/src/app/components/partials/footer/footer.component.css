@@ -1,0 +1,20 @@
+#footer{
+    background-color: #234;
+  }
+  .material-symbols-outlined{
+    vertical-align: bottom;
+    margin-right: 10px;
+  }
+  h5{
+    border-left: 5px solid var(--primary);
+  }
+  .btn{
+    background-color: var(--primary);
+    color: white;
+  }
+  .btn:hover{
+    background-color: white;
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+  

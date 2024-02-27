@@ -1,0 +1,28 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@1,200&family=Raleway:wght@700&display=swap");
+:root {
+  --primary: #06A3DA;
+  --secondary: #F57E57;
+  --light: #EEF9FF;
+  --dark: #091E3E;
+  --black: black;
+}
+html, body{
+  height: 100%;
+  margin:0;
+  background-color: white;
+}
+mat-sidenav-container, mat-sidenav-content, mat-sidenav{
+  height: 100%;
+}
+mat-sidenav{
+  width: 200px;
+}
+html{
+  background-color: white;
+  margin: 0;
+}
+
+
+

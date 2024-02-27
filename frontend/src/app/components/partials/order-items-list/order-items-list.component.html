@@ -1,0 +1,39 @@
+<table>
+  <tr>
+    <td colspan="5">
+      <h3>Svi proizvodi :</h3>
+    </td>
+  </tr>
+  <tr *ngFor="let item of itemOrder.items">
+    <td>
+      <a routerLink="/proizvod/{{item.proizvod.id}}">
+        <img [src]="item.proizvod.imageUrl"/>
+      </a>
+    </td>
+    <td>
+      {{item.proizvod.naziv}}
+    </td>
+    <td>
+      {{item.proizvod.cena}} din
+    </td>
+    <td>
+      x{{item.quantity}}
+    </td>
+    <td>
+      {{item.price}} din
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3"></td>
+    <td>
+      <strong>
+        Ukupno :
+      </strong>
+    </td>
+    <td>
+      <strong>
+        {{itemOrder.totalPrice}} din
+      </strong>
+    </td>
+  </tr>
+</table>

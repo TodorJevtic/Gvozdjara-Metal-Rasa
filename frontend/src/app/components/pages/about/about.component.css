@@ -1,0 +1,24 @@
+.tekst {
+	align-items:center;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+	height: 960px;
+	font-family: 'Oswald', sans-serif;
+}
+.slikica img {
+	margin-left:300px;
+	padding: 10px;
+	border-radius: 80%;	
+	box-shadow: 0 0 10px #999999;
+	margin-top: -200px;
+}
+.nekitekst{
+	text-indent: 50px;	
+	width:600px;
+	height:650px;
+	line-height: 30px;
+	margin-top: -170px;
+	font-family: 'Quicksand', sans-serif;
+}

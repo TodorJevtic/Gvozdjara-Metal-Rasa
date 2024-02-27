@@ -1,0 +1,86 @@
+<app-not-found
+  [visible]="!cart || !cart.items.length"
+  notFound="Korpa je prazna!"
+  linkResetText="Vrati se na pocetnu"
+></app-not-found>
+<section *ngIf="cart && cart.items.length" class="vh-100" style="background-color: white;">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <p><span class="h2">Korpa </span><span class="h4">({{cart.items.length}} proizvoda u vasoj korpi)</span></p>
+  
+          <div class="card mb-4">
+            <div class="card-body p-4">
+  
+              <div *ngFor="let cartItem of cart.items" class="row align-items-center">
+                <div class="col-md-2">
+                  <img class="img-fluid" [src]="cartItem.proizvod.imageUrl" [alt]="cartItem.proizvod.naziv" width="100px" height="100px">
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Naziv proizvoda</p>
+                    <p class="lead fw-normal mb-0">{{cartItem.proizvod.naziv}}</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Kolicina</p>
+                    <p class="lead fw-normal mb-0"><select  class="form-select form-select-sm" #quantitySelect
+                        [value]="cartItem.quantity"
+                        (change)="changeQuantity(cartItem, quantitySelect.value)">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        </select></p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Cena</p>
+                    <p class="lead fw-normal mb-0">{{cartItem.proizvod.cena}} din</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center">
+                  <div>
+                    <p class="small text-muted mb-4 pb-2">Ukupna cena</p>
+                    <p class="lead fw-normal mb-0">{{cartItem.price}} din</p>
+                  </div>
+                </div>
+                <div class="col-md-2 d-flex justify-content-center mt-5">
+                    <div>
+                        <button class="remove-button" (click)="removeFromCart(cartItem)">Remove</button>
+                    </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class="card mb-5">
+            <div class="card-body p-4">
+  
+              <div class="float-end">
+                <p class="mb-0 me-5 d-flex align-items-center">
+                    <span class="small text-muted me-2">Kolicina proizvoda:</span> <span
+                      class="lead fw-normal">{{cart.totalCount}}</span>
+                  </p>
+                <p class="mb-0 me-5 d-flex align-items-center">
+                  <span class="small text-muted me-2">Konacna cena:</span> <span
+                    class="lead fw-normal">{{cart.totalPrice}} din</span>
+                </p>
+              </div>
+  
+            </div>
+          </div>
+  
+          <div class="d-flex justify-content-end">
+            <button type="button" routerLink="/alati" class="btn btn-outline-primary me-2">Nastavi kupovinu</button>
+            <button type="button" routerLink="/checkout" class="btn btn-primary me-4">Porudzbenica</button>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>

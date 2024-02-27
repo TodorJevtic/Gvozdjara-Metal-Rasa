@@ -1,0 +1,56 @@
+.btn{
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    color: #ffffff;
+}
+.box-container{
+	display:grid;
+	grid-template-columns: repeat(auto-fit, 500px);
+    gap:20px;
+	justify-content: center;
+	margin-bottom:auto;
+}
+img{
+    max-width:100%;
+	transition:0.5s;
+	width:280px;
+	height:180px;
+	border-radius:7px;
+}
+.container{
+	padding-left: 100px;
+}
+.checked {
+	color: orange;
+}
+
+.searchBox{
+	padding-top: 45px;
+}
+
+.form{
+    position: relative;
+}
+
+.form .fa-search{
+    position: absolute;
+    top:20px;
+    left: 20px;
+    color: var(--primary);
+}
+
+.form span{
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid var(--primary);
+
+}
+
+.form-input{
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+	border-color: var(--primary);
+}

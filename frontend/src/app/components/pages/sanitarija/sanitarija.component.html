@@ -1,0 +1,53 @@
+<div class="searchBox">
+    <div class="container">
+        <div class="row height d-flex justify-content-center align-items-center">
+        <div class="col-md-6">
+            <div class="form">
+            <i class="fa fa-search"></i>
+            <input type="search" [(ngModel)]="searchtext" class="form-control form-input" placeholder="Pretrazite proizvode ovde...">
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<app-not-found
+  [visible]="!proizvodi || !proizvodi.length"
+  missing="Nemamo taj proizvod!"
+  linkResetText="Vrati se na pocetnu"
+></app-not-found>
+<div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        <div  *ngFor="let proizvod of proizvodi|filter:searchtext" class="col-md-4 mb-5">
+            <div id="kartica" class="card shadow rounded" style="width: 18rem;">
+                <img [src]="proizvod.imageUrl" class="card-img-top rounded-0" alt="...">
+                <div class="card-body mt-3 mb-3">
+                    <div class="row">
+                        <div class="col-10">
+                            <h4 class="card-title">{{proizvod.naziv}}</h4>
+                            <p class="card-text">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </p>
+                        </div>
+                        <div class="col-2">
+                            <i class="bi bi-bookmark-plus fs-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row align-items-center text-center g-0">
+                    <div class="col-4">
+                        <h5>{{proizvod.cena}} din</h5>
+                    </div>
+                    <div class="col-8">
+                        <button type="button" routerLink="/proizvod/{{proizvod.id}}" class="btn w-100 p-3 rounded-0">Kupi</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

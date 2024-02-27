@@ -1,0 +1,40 @@
+<section class="vh-100 bg-image">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-75">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">LogIn</h2>
+
+              <form [formGroup]="formLogin" (ngSubmit)="submit()">
+                <text-input
+                [abstractControl]="formControl.email"
+                [showErrors]="isSubmitted"
+                type="email"
+                label="Email">
+              </text-input>
+
+              <text-input
+              [abstractControl]="formControl.password"
+              [showErrors]="isSubmitted"
+              type="password"
+              label="Password">
+            </text-input>
+
+                <button-default content="Login"></button-default>
+                
+                <p class="text-center text-muted mt-5 mb-0">Don't have account, signup here?
+                  <a class="fw-bold text-body">
+                    <a routerLink="/register">Register here</a>
+                  </a>
+                </p>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,109 @@
+.logo{
+    height: 40px;
+    width: 60px;
+    margin-left: 10px;
+  }
+  a{
+    color: white;
+    font-size: 22px;
+    font-family: 'Jost', sans-serif;
+  }
+  a:hover{
+    color: var(--secondary);
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--primary);
+  }
+  .btn.btn-primary{
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+  .btn.btn-primary:hover{
+    background-color: #0B93C4;
+  }
+  .btn.btn-outline-primary{
+    border-color: var(--primary);
+    color: white;
+  }
+  .btn.btn-outline-primary:hover{
+    border-color: var(--primary);
+    background-color: var(--primary);
+    color: white;
+  }
+  .m-0{
+    color: var(--primary);
+  }
+  .side{
+    margin-top: 4px;
+    margin-left: 5px;
+    background-color: var(--primary);
+  }
+  .side:hover{
+    background-color: var(--primary);
+  }
+  .material-symbols-outlined{
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+  #efekat{
+    transition: all .2s ease-in-out;
+    }
+  #efekat:hover {
+    transform: scale(1.1);
+  }
+
+  #lista :hover{
+    background-color: var(--primary);
+  }
+  .dropdown {
+    display: inline-block;
+    position: relative;
+    margin-right: 60px;
+  }
+  
+  .dugme{
+    border:none;
+    border-radius:5px;
+    padding:9px 20px;
+    font-size:18px;
+    cursor:pointer;
+    background-color: var(--primary);
+    color: white;
+  }
+  
+  
+  .dropdown-options {
+    display: none;
+    position: absolute;
+    overflow: auto;
+    background-color:#fff;
+    border-radius:5px;
+    box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  }
+  
+  .dropdown:hover .dropdown-options {
+    display: block;
+  }
+  
+  .dropdown-options a {
+    display: block;
+    color: var(--primary);
+    padding: 5px;
+    text-decoration: none;
+    padding:10px 35px;
+    cursor: pointer;
+  }
+  
+  .dropdown-options a:hover {
+    color: var(--secondary);
+    background-color: #ddd;
+    border-radius:5px;
+  }
+
+  header{
+    background-color: #234;
+  }
+  
+
+  

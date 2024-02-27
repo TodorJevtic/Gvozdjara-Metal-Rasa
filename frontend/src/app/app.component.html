@@ -1,0 +1,93 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav opened="false">
+    <mat-nav-list id="lista">
+      <a id="efekat" mat-list-item routerLink="/" (click)="sidenav.close()">
+          <span class="material-symbols-outlined">
+              home
+          </span>
+          Welcome
+      </a>
+      <a id="efekat" mat-list-item routerLink="/alati" (click)="sidenav.close()">
+          <span class="material-symbols-outlined">
+              handyman
+          </span>
+          Alati
+      </a>
+      <a id="efekat" mat-list-item routerLink="/rasveta" (click)="sidenav.close()">
+        <span class="material-symbols-outlined">
+            lightbulb
+        </span>
+        Rasveta
+      </a>
+      <a id="efekat" mat-list-item routerLink="/sanitarija" (click)="sidenav.close()">
+        <span class="material-symbols-outlined">
+            bathtub
+        </span>
+        Sanitarija
+      </a>
+      <a id="efekat" *ngIf="!isAuth" mat-list-item routerLink="/register" (click)="sidenav.close()">
+          <span class="material-symbols-outlined">
+              person
+          </span>
+          Register
+      </a>
+      <a id="efekat" *ngIf="!isAuth" mat-list-item routerLink="/login" (click)="sidenav.close()">
+          <span class="material-symbols-outlined">
+              login
+          </span>
+          Login
+      </a>
+      <a id="efekat" *ngIf="isAuth" mat-list-item (click)="sidenav.close()" routerLink="/profile">
+          <span class="material-symbols-outlined">
+              account_circle
+          </span>
+          Profile
+      </a>
+      <a id="efekat" *ngIf="isAuth" mat-list-item (click)="sidenav.close()" (click)="logout()">
+        <span class="material-symbols-outlined">
+            close_small
+        </span>
+        Logout
+      </a>
+  </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="container" class="w-100 p-3" class="">
+      <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3">
+        <div class="col-md-3 mb-2 mb-md-0">
+          <a class="d-inline-flex link-body-emphasis text-decoration-none">
+            <div>
+              <button (click)="sidenav.toggle()" class="side" mat-mini-fab aria-label="Example icon button with a menu icon">
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+            </div>
+            <h1 class="m-0"><i class="fa fa-tooth me-2"></i>GvozdjaraRasa</h1>
+          </a>
+        </div>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a routerLink="" class="nav-link active">Home</a></li>
+          <li><a routerLink="alati" class="nav-link">Alati</a></li>
+          <li><a routerLink="sanitarija" class="nav-link">Sanitarija</a></li>
+          <li><a routerLink="rasveta" class="nav-link">Rasveta</a></li>
+          <li><a routerLink="cart-page" class="nav-link">Cart</a></li>
+          <li><a routerLink="about" class="nav-link">About</a></li>
+        </ul>
+        <div class="col-md-3 text-end">
+          <button *ngIf="!isAuth" type="button" routerLink="login" class="btn btn-outline-primary me-2">Login</button>
+          <button *ngIf="!isAuth" type="button" routerLink="register" class="btn btn-primary me-4">Sign-up</button>
+          <div *ngIf="isAuth" class="dropdown">
+            <button class="dugme" matBadge="{{cartQuantity}}" matBadgePosition="after" matBadgeColor="accent">{{korisnik.name}}</button>
+            <div class="dropdown-options">
+              <a routerLink="/profile">Profile</a>
+              <a routerLink="/cart-page">Orders</a>
+              <a (click)="logout()">Logout</a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+  <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,9 @@
+<div class="main">
+  <button [ngStyle]="{
+    color:color,
+    'background-color':bgroundColor,
+    'font-size.rem':fontSize,
+    'width.rem':width
+  }" [type]="class"
+  (click)="onClick.emit()">{{content}}</button>
+</div>

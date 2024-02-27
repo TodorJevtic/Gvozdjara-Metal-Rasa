@@ -1,0 +1,29 @@
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary);
+}
+
+.profile-button {
+    background: var(--primary);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+.labels {
+    font-size: 11px;
+}
+
+.add-experience:hover {
+    background: var(--primary);
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px var(--primary);
+}
+.container{
+    border: 1px solid var(--primary);
+}

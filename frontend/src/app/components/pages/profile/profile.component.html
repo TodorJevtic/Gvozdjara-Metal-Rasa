@@ -1,0 +1,42 @@
+<div class="container rounded bg-white mt-5 mb-5">
+    <div class="row">
+        <div class="col-md-3 border-right">
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">{{user.name}}</span><span class="text-black-50">{{user.email}}</span><span> </span></div>
+        </div>
+        <div class="col-md-6 border-right">
+            <div class="p-3 py-5">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Podesavanje profila</h4>
+                </div>
+                <div class="row mt-3">
+                    <form [formGroup]="myFrom">
+                        <div  class="col-md-12">
+                            <label class="labels">Name</label>
+                            <input type="text" name="name" class="form-control" formControlName="name">
+                            <div *ngIf="myFrom.get('name')?.invalid && (myFrom.get('name')?.dirty || myFrom.get('name')?.touched)" class="text-danger">Ime mora imati vise od 3 karaktera </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Email</label>
+                            <input type="email" name="email" class="form-control" formControlName="email">
+                            <div *ngIf="myFrom.get('email')?.invalid && (myFrom.get('email')?.dirty || myFrom.get('email')?.touched)" class="text-danger">Neispravan e-mail format</div>
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Password</label>
+                            <input type="password" class="form-control" placeholder="Unesite vasu lozinku" value="">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Re-password</label>
+                            <input type="password" class="form-control" placeholder="Ponovite vasu lozinku" value="">
+                        </div>
+                        <div class="col-md-12">
+                            <label class="labels">Adresa</label>
+                            <input type="text" name="address" class="form-control" formControlName="address">
+                            <div *ngIf="myFrom.get('address')?.invalid && (myFrom.get('address')?.dirty || myFrom.get('address')?.touched)" class="text-danger">Adresa mora imati vise od 5 karaktera</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="mt-5 text-center" (click)="onSubmit()"><button class="btn btn-primary profile-button" type="button">Sacuvaj promene</button></div>
+            </div>
+        </div>
+    </div>
+</div>

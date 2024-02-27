@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="content">
+      <order-items-list [itemOrder]="orderr"></order-items-list>
+    </div>
+        <form [formGroup]="checkoutFormGroup">
+            <h3>Informacije o naruciocu</h3>
+            <text-input [abstractControl]="fc.name" label="Name"></text-input>
+            <text-input [abstractControl]="fc.address" label="Address"></text-input>
+        </form>
+    <div class="buttons-container">
+      <div class="buttons">
+        <button-default content="Naruči" (click)="createOrder()"></button-default>
+      </div>
+    </div>
+  </div>
+  

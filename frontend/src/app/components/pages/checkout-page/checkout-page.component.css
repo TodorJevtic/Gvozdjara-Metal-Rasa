@@ -1,0 +1,37 @@
+.container{
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content{
+  width: 55rem;
+}
+
+.content,form{
+  display: flex;
+  flex-direction: column;
+}
+
+form{
+  width: 40%;
+  margin-top: 20px;
+}
+
+.buttons-container{
+  flex-basis: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.buttons{
+  margin: 2rem;
+  width: 35rem;
+}
+
+h3{
+    text-align: center;
+}
+
+
